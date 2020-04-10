@@ -3,6 +3,7 @@
 from argparse import ArgumentParser
 from typing import List
 from math import sqrt
+from sys import argv
 
 
 def is_prime(i: int) -> bool:
@@ -34,6 +35,10 @@ parser.add_argument("-n", "--number", type=int, help="Number to check")
 parser.add_argument("-s", "--string", type=str, help="Word to check")
 
 args = parser.parse_args()
+
+if(len(argv) == 1):
+    parser.print_help()
+    exit(5)
 
 exit_code: int = 0
 
